@@ -1,0 +1,987 @@
+#! C:/Program Files/Nuke14.0v5/nuke-14.0.5.dll -nx
+version 14.0 v5
+Gizmo {
+ tile_color 0xff
+ addUserKnob {20 LED}
+ addUserKnob {4 size l "Pixel Size" t "LED Size." M {"3x3 " 6x6 9x9 "" "" "" "" ""}}
+ addUserKnob {68 type l Type t "Pixel type." M {Hard Soft Nearest "" ""}}
+ addUserKnob {68 blend l "Blend Mode" t "Tested blend modes for different styles." M {Multiply Geometric "Pixels Only" "" "" "" "" "" "" ""}}
+ addUserKnob {68 sub l Subpixel t "Reduces pixel size by half." M {Off On "" "" ""}}
+ addUserKnob {7 intensity l Intensity t "Dissolve between the original image."}
+ intensity 1
+ addUserKnob {41 white l "Gain Image" t "Brightness adjustment." T Grade1.white}
+ addUserKnob {6 static l "Refresh Rate" t "Enable refresh rate." +STARTLINE}
+ addUserKnob {26 ""}
+ addUserKnob {4 glow l Glow t "Turn on/off inverse square law exponential glow." M {Off On "" ""}}
+ addUserKnob {7 glow_str l Strenght t "Glow strenght." R 0 2}
+ glow_str 1
+ addUserKnob {26 ""}
+ addUserKnob {7 main_mix l Mix t "Dissolve between original image at 0 and the full effect at 1."}
+ main_mix 1
+ addUserKnob {20 Info}
+ addUserKnob {26 description l "" +STARTLINE T "Zoom levels lower than 100%, downrez or proxy mode will generate wrong visuals.\nRefresh Rate option generates real flickering effect.\nSubpixel mode affects LED aspect."}
+ addUserKnob {26 ""}
+ addUserKnob {26 text_01 l "" +STARTLINE T "Created by <b><a href=\"https://vimeo.com/lucascoutinho\">Lucas L. Coutinho</a></b>"}
+ addUserKnob {26 text_02 l "" +STARTLINE T "Version: <b>v01</b>"}
+ addUserKnob {26 text_03 l "" +STARTLINE T "Year: 2023"}
+}
+ StickyNote {
+  inputs 0
+  name StickyNote7
+  tile_color 0xff
+  label "Blend Modes"
+  note_font_size 40
+  xpos 275
+  ypos 654
+ }
+ Input {
+  inputs 0
+  name Source
+  xpos 558
+  ypos -1623
+ }
+ Dot {
+  name Dot36
+  xpos 592
+  ypos -1411
+ }
+set Na8c20800 [stack 0]
+ Dot {
+  name Dot5
+  xpos 196
+  ypos -1411
+ }
+set Na8c20c00 [stack 0]
+ Dot {
+  name Dot14
+  xpos -60
+  ypos -1411
+ }
+ Remove {
+  name Remove1
+  xpos -94
+  ypos -1330
+ }
+ Dot {
+  name Dot44
+  xpos -60
+  ypos -1238
+ }
+set Na8c21800 [stack 0]
+ Dot {
+  name Dot56
+  xpos -279
+  ypos -1238
+ }
+ Reformat {
+  type scale
+  scale {{curve x1 2}}
+  name Reformat1
+  xpos -313
+  ypos -1155
+ }
+ Dot {
+  name Dot57
+  xpos -279
+  ypos -1064
+ }
+push $Na8c21800
+ Switch {
+  inputs 2
+  which {{sub}}
+  name Switch7
+  xpos -94
+  ypos -1067
+ }
+ Dot {
+  name Dot45
+  xpos -60
+  ypos -965
+ }
+set Na8c3b000 [stack 0]
+ Dot {
+  name Dot46
+  xpos -170
+  ypos -965
+ }
+set Na8c3b400 [stack 0]
+ Expression {
+  expr0 "((y-frame*18)%12==0) + ((y-1-frame*18)%12==0) + ((y-2-frame*18)%12==0)"
+  channel1 {-rgba.red -rgba.green -rgba.blue none}
+  channel2 {-rgba.red -rgba.green -rgba.blue none}
+  name Expression23
+  xpos -204
+  ypos -805
+  addUserKnob {20 User}
+ }
+ Expression {
+  channel0 rgb
+  expr0 r+g+b
+  name Expression24
+  xpos -204
+  ypos -765
+ }
+ Dot {
+  name Dot47
+  xpos -170
+  ypos -663
+ }
+push $Na8c3b000
+ Expression {
+  expr0 "((x)%9==0) + ((x-1)%9==0) + ((x-2)%9==0)"
+  expr1 "((x-3)%9==0) + ((x-4)%9==0) + ((x-5)%9==0)"
+  expr2 "((x-6)%9==0) + ((x-7)%9==0) + ((x-8)%9==0)"
+  name Expression25
+  xpos -94
+  ypos -805
+ }
+ Merge2 {
+  inputs 2
+  operation from
+  bbox B
+  name Merge12
+  xpos -94
+  ypos -666
+ }
+ Dot {
+  name Dot53
+  xpos -60
+  ypos -399
+ }
+push $Na8c3b400
+ Dot {
+  name Dot25
+  xpos -386
+  ypos -965
+ }
+set Na8c67000 [stack 0]
+ Dot {
+  name Dot26
+  xpos -496
+  ypos -965
+ }
+set Na8c67400 [stack 0]
+ Expression {
+  expr0 "((y-frame*18)%12==0) + ((y-1-frame*18)%12==0) + ((y-2-frame*18)%12==0)"
+  channel1 {-rgba.red -rgba.green -rgba.blue none}
+  channel2 {-rgba.red -rgba.green -rgba.blue none}
+  name Expression14
+  xpos -530
+  ypos -805
+  addUserKnob {20 User}
+ }
+ Expression {
+  channel0 rgb
+  expr0 r+g+b
+  name Expression15
+  xpos -530
+  ypos -765
+ }
+ Dot {
+  name Dot27
+  xpos -496
+  ypos -663
+ }
+push $Na8c67000
+ Expression {
+  expr0 "((x)%12==0) + ((x-1)%12==0) + ((x-2)%12==0)"
+  expr1 "((x-3)%12==0) + ((x-4)%12==0) + ((x-5)%12==0)"
+  expr2 "((x-6)%12==0) + ((x-7)%12==0) + ((x-8)%12==0)"
+  name Expression16
+  xpos -420
+  ypos -805
+ }
+ Merge2 {
+  inputs 2
+  operation from
+  bbox B
+  name Merge9
+  xpos -420
+  ypos -666
+ }
+ Blur {
+  size 2
+  name Blur1
+  xpos -420
+  ypos -626
+ }
+ set Ca8c94c00 [stack 0]
+push $Na8c67400
+ Dot {
+  name Dot6
+  xpos -644
+  ypos -965
+ }
+set Na8c95000 [stack 0]
+ Dot {
+  name Dot7
+  xpos -754
+  ypos -965
+ }
+set Na8c95400 [stack 0]
+ Expression {
+  expr0 "((y-frame*18)%12==0) + ((y-1-frame*18)%12==0) + ((y-2-frame*18)%12==0)"
+  channel1 {-rgba.red -rgba.green -rgba.blue none}
+  channel2 {-rgba.red -rgba.green -rgba.blue none}
+  name Expression6
+  xpos -788
+  ypos -805
+  addUserKnob {20 User}
+ }
+ Expression {
+  channel0 rgb
+  expr0 r+g+b
+  name Expression7
+  xpos -788
+  ypos -765
+ }
+ Dot {
+  name Dot1
+  xpos -754
+  ypos -663
+ }
+push $Na8c95000
+ Expression {
+  expr0 "((x)%12==0) + ((x-1)%12==0) + ((x-2)%12==0)"
+  expr1 "((x-3)%12==0) + ((x-4)%12==0) + ((x-5)%12==0)"
+  expr2 "((x-6)%12==0) + ((x-7)%12==0) + ((x-8)%12==0)"
+  name Expression8
+  xpos -678
+  ypos -805
+ }
+ Merge2 {
+  inputs 2
+  operation from
+  bbox B
+  name Merge1
+  xpos -678
+  ypos -666
+ }
+ Dot {
+  name Dot52
+  xpos -644
+  ypos -399
+ }
+ Switch {
+  inputs 3
+  which {{type}}
+  name Switch6
+  xpos -420
+  ypos -402
+ }
+ Dot {
+  name Dot55
+  xpos -386
+  ypos -234
+ }
+push $Na8c95400
+ Dot {
+  name Dot39
+  xpos -1028
+  ypos -965
+ }
+set Na22e5800 [stack 0]
+ Dot {
+  name Dot43
+  xpos -1167
+  ypos -965
+ }
+set Na22e5c00 [stack 0]
+ Expression {
+  expr0 (y-frame*12)%8==0
+  expr1 (y-1-frame*12)%8==0
+  name Expression21
+  xpos -1201
+  ypos -808
+ }
+ Expression {
+  channel0 rgb
+  expr0 r+g
+  name Expression22
+  xpos -1201
+  ypos -768
+ }
+ Dot {
+  name Dot42
+  xpos -1167
+  ypos -662
+ }
+push $Na22e5800
+ Expression {
+  expr0 ((x)%6==0)+((x-1)%6==0)
+  expr1 ((x-2)%6==0)+((x-3)%6==0)
+  expr2 ((x-4)%6==0)+((x-5)%6==0)
+  name Expression19
+  xpos -1062
+  ypos -808
+ }
+ Merge2 {
+  inputs 2
+  operation from
+  bbox B
+  name Merge11
+  xpos -1062
+  ypos -665
+ }
+ Dot {
+  name Dot49
+  xpos -1028
+  ypos -409
+ }
+push $Na22e5c00
+ Dot {
+  name Dot22
+  xpos -1336
+  ypos -965
+ }
+set Na230d800 [stack 0]
+ Dot {
+  name Dot23
+  xpos -1446
+  ypos -965
+ }
+set Na230dc00 [stack 0]
+ Expression {
+  expr0 (y-frame*12)%8==0
+  expr1 (y-1-frame*12)%8==0
+  name Expression11
+  xpos -1480
+  ypos -805
+ }
+ Expression {
+  channel0 rgb
+  expr0 r+g
+  name Expression12
+  xpos -1480
+  ypos -765
+ }
+ Dot {
+  name Dot24
+  xpos -1446
+  ypos -659
+ }
+push $Na230d800
+ Expression {
+  expr0 ((x)%8==0)+((x-1)%8==0)
+  expr1 ((x-2)%8==0)+((x-3)%8==0)
+  expr2 ((x-4)%8==0)+((x-5)%8==0)
+  name Expression13
+  xpos -1370
+  ypos -805
+ }
+ Merge2 {
+  inputs 2
+  operation from
+  bbox B
+  name Merge8
+  xpos -1370
+  ypos -662
+ }
+clone $Ca8c94c00 {
+  xpos -1370
+  ypos -622
+  selected false
+ }
+push $Na230dc00
+ Dot {
+  name Dot8
+  xpos -1612
+  ypos -965
+ }
+set Na2341800 [stack 0]
+ Dot {
+  name Dot9
+  xpos -1722
+  ypos -965
+ }
+set Na2341c00 [stack 0]
+ Expression {
+  expr0 (y-frame*12)%8==0
+  expr1 (y-1-frame*12)%8==0
+  name Expression3
+  xpos -1756
+  ypos -805
+ }
+ Expression {
+  channel0 rgb
+  expr0 r+g
+  name Expression4
+  xpos -1756
+  ypos -765
+ }
+ Dot {
+  name Dot2
+  xpos -1722
+  ypos -659
+ }
+push $Na2341800
+ Expression {
+  expr0 ((x)%8==0)+((x-1)%8==0)
+  expr1 ((x-2)%8==0)+((x-3)%8==0)
+  expr2 ((x-4)%8==0)+((x-5)%8==0)
+  name Expression5
+  xpos -1646
+  ypos -805
+ }
+ Merge2 {
+  inputs 2
+  operation from
+  bbox B
+  name Merge2
+  xpos -1646
+  ypos -662
+ }
+ Dot {
+  name Dot48
+  xpos -1612
+  ypos -409
+ }
+ Switch {
+  inputs 3
+  which {{type}}
+  name Switch5
+  xpos -1370
+  ypos -412
+ }
+push $Na2341c00
+ Dot {
+  name Dot38
+  xpos -1920
+  ypos -965
+ }
+set Na2375c00 [stack 0]
+ Dot {
+  name Dot40
+  xpos -2072
+  ypos -965
+ }
+set Na23aa000 [stack 0]
+ Expression {
+  channel0 rgb
+  expr0 "(y-frame*6) % 4 == 0"
+  name Expression20
+  xpos -2106
+  ypos -806
+  addUserKnob {20 User}
+ }
+ Dot {
+  name Dot41
+  xpos -2072
+  ypos -656
+ }
+push $Na2375c00
+ Expression {
+  expr0 "x % 3 == 0"
+  expr1 "x % 3 == 1"
+  expr2 "x % 3 == 2"
+  name Expression18
+  xpos -1954
+  ypos -799
+ }
+ Merge2 {
+  inputs 2
+  operation from
+  bbox B
+  name Merge10
+  xpos -1954
+  ypos -659
+ }
+ Dot {
+  name Dot50
+  xpos -1920
+  ypos -409
+ }
+push $Na23aa000
+ Dot {
+  name Dot19
+  xpos -2248
+  ypos -965
+ }
+set Na23ab800 [stack 0]
+ Dot {
+  name Dot20
+  xpos -2358
+  ypos -965
+ }
+set Na23abc00 [stack 0]
+ Expression {
+  channel0 rgb
+  expr0 "(y-frame*6) % 4 == 0"
+  name Expression9
+  xpos -2392
+  ypos -806
+  addUserKnob {20 User}
+ }
+ Dot {
+  name Dot21
+  xpos -2358
+  ypos -656
+ }
+push $Na23ab800
+ Expression {
+  expr0 "x % 4 == 0"
+  expr1 "x % 4 == 1"
+  expr2 "x % 4 == 2"
+  name Expression10
+  xpos -2282
+  ypos -806
+ }
+ Merge2 {
+  inputs 2
+  operation from
+  bbox B
+  name Merge7
+  xpos -2282
+  ypos -659
+ }
+ Blur {
+  size 1.4
+  name Blur3
+  xpos -2282
+  ypos -619
+ }
+push $Na23abc00
+ Dot {
+  name Dot10
+  xpos -2528
+  ypos -965
+ }
+set Na23d7400 [stack 0]
+ Dot {
+  name Dot11
+  xpos -2638
+  ypos -965
+ }
+ Expression {
+  channel0 rgb
+  expr0 "(y-frame*6) % 4 == 0"
+  channel1 {-rgba.red rgba.green -rgba.blue none}
+  channel2 {-rgba.red -rgba.green rgba.blue none}
+  name Expression1
+  xpos -2672
+  ypos -806
+  addUserKnob {20 User}
+ }
+ Dot {
+  name Dot3
+  xpos -2638
+  ypos -656
+ }
+push $Na23d7400
+ Expression {
+  expr0 "x % 4 == 0"
+  expr1 "x % 4 == 1"
+  expr2 "x % 4 == 2"
+  name Expression2
+  xpos -2562
+  ypos -806
+ }
+ Merge2 {
+  inputs 2
+  operation from
+  bbox B
+  name Merge3
+  xpos -2562
+  ypos -659
+ }
+ Dot {
+  name Dot51
+  xpos -2528
+  ypos -409
+ }
+ Switch {
+  inputs 3
+  which {{type}}
+  name Switch4
+  xpos -2282
+  ypos -412
+ }
+ Dot {
+  name Dot54
+  xpos -2248
+  ypos -234
+ }
+ Switch {
+  inputs 3
+  which {{size}}
+  name Switch1
+  xpos -1370
+  ypos -237
+ }
+ FrameHold {
+  firstFrame 1
+  name FrameHold1
+  xpos -1370
+  ypos -113
+  disable {{static}}
+ }
+ Clamp {
+  name Clamp1
+  xpos -1370
+  ypos -61
+ }
+ Multiply {
+  value {{intensity}}
+  name Multiply1
+  xpos -1370
+  ypos -9
+ }
+ Dot {
+  name Dot58
+  xpos -1336
+  ypos 149
+ }
+set Na2440400 [stack 0]
+ Dot {
+  name Dot60
+  xpos -1480
+  ypos 149
+ }
+ Reformat {
+  type scale
+  scale {{1/parent.Reformat1.scale x1 0.5}}
+  name Reformat2
+  xpos -1514
+  ypos 222
+ }
+ Dot {
+  name Dot59
+  xpos -1480
+  ypos 301
+ }
+push $Na2440400
+ Switch {
+  inputs 2
+  which {{sub}}
+  name Switch8
+  xpos -1370
+  ypos 298
+ }
+ Dot {
+  name Dot16
+  xpos -1336
+  ypos 457
+ }
+set Na2441c00 [stack 0]
+ Dot {
+  name Dot15
+  xpos -1336
+  ypos 568
+ }
+set Na2464000 [stack 0]
+ Dot {
+  name Dot18
+  xpos -1336
+  ypos 680
+ }
+push $Na2464000
+push $Na8c20c00
+ Grade {
+  white 2
+  name Grade1
+  xpos 162
+  ypos -581
+ }
+ Dot {
+  name Dot12
+  xpos 196
+  ypos 292
+ }
+set Na2464c00 [stack 0]
+ Dot {
+  name Dot13
+  xpos 9
+  ypos 292
+ }
+ Merge2 {
+  inputs 2
+  operation geometric
+  bbox B
+  name Merge5
+  xpos -25
+  ypos 565
+ }
+push $Na2441c00
+push $Na2464c00
+ Merge2 {
+  inputs 2
+  operation multiply
+  bbox B
+  name Merge4
+  xpos 162
+  ypos 454
+ }
+ Switch {
+  inputs 3
+  which {{blend}}
+  name Switch2
+  xpos 162
+  ypos 677
+ }
+ Dot {
+  name Dot32
+  xpos 196
+  ypos 907
+ }
+set Na2490000 [stack 0]
+ Dot {
+  name Dot34
+  xpos -114
+  ypos 907
+ }
+set Na2490400 [stack 0]
+ Dot {
+  name Dot33
+  xpos -669
+  ypos 907
+ }
+ Dot {
+  name Dot4
+  xpos -669
+  ypos 1121
+ }
+set Na2490c00 [stack 0]
+ Dot {
+  name Dot17
+  xpos -559
+  ypos 1121
+ }
+set Na2491000 [stack 0]
+ Blur {
+  size {{parent.Blur7.size*2}}
+  name Blur6
+  xpos -593
+  ypos 1180
+ }
+ Multiply {
+  value {{parent.Multiply7.value/pow(2,2)}}
+  name Multiply6
+  xpos -593
+  ypos 1255
+ }
+push $Na2490c00
+ Blur {
+  size 1
+  name Blur7
+  xpos -703
+  ypos 1180
+ }
+ Multiply {
+  value {{glow_str}}
+  name Multiply7
+  xpos -703
+  ypos 1255
+ }
+push $Na2491000
+ Dot {
+  name Dot28
+  xpos -449
+  ypos 1121
+ }
+set Na24ea400 [stack 0]
+ Blur {
+  size {{parent.Blur6.size*2}}
+  name Blur8
+  xpos -483
+  ypos 1180
+ }
+ Multiply {
+  value {{parent.Multiply7.value/pow(3,2)}}
+  name Multiply8
+  xpos -483
+  ypos 1255
+ }
+push 0
+push $Na24ea400
+ Dot {
+  name Dot29
+  xpos -339
+  ypos 1121
+ }
+set Na24eb000 [stack 0]
+ Blur {
+  size {{parent.Blur8.size*2}}
+  name Blur9
+  xpos -373
+  ypos 1180
+ }
+ Multiply {
+  value {{parent.Multiply7.value/pow(4,2)}}
+  name Multiply9
+  xpos -373
+  ypos 1255
+ }
+push $Na24eb000
+ Dot {
+  name Dot30
+  xpos -237
+  ypos 1121
+ }
+ Blur {
+  size {{parent.Blur9.size*2}}
+  name Blur10
+  xpos -271
+  ypos 1180
+ }
+ Multiply {
+  value {{parent.Multiply7.value/pow(5,2)}}
+  name Multiply10
+  xpos -271
+  ypos 1255
+ }
+ Merge2 {
+  inputs 5+1
+  operation plus
+  name Plus1
+  xpos -483
+  ypos 1458
+ }
+ Dot {
+  name Dot35
+  xpos -449
+  ypos 1552
+ }
+push $Na2490400
+ Merge2 {
+  inputs 2
+  operation plus
+  bbox B
+  name Merge6
+  xpos -148
+  ypos 1549
+ }
+ Dot {
+  name Dot31
+  xpos -114
+  ypos 1678
+ }
+push $Na2490000
+ Switch {
+  inputs 2
+  which {{glow}}
+  name Switch3
+  xpos 162
+  ypos 1675
+ }
+ SoftClip {
+  conversion "logarithmic compress"
+  softclip_min 0.96
+  name SoftClip1
+  xpos 162
+  ypos 1831
+ }
+ Dot {
+  name Dot37
+  xpos 196
+  ypos 2000
+ }
+push $Na8c20800
+ Dissolve {
+  inputs 2
+  which {{main_mix}}
+  name Dissolve1
+  xpos 558
+  ypos 1991
+ }
+ Expression {
+  expr3 1
+  name Expression17
+  xpos 558
+  ypos 2149
+ }
+ Output {
+  name Output1
+  xpos 558
+  ypos 2024
+ }
+ StickyNote {
+  inputs 0
+  name StickyNote5
+  tile_color 0xff
+  label "6x6 Soft"
+  note_font_size 40
+  xpos -1467
+  ypos -906
+ }
+ StickyNote {
+  inputs 0
+  name StickyNote8
+  tile_color 0xff
+  label "Inverser Square Law"
+  note_font_size 40
+  xpos -634
+  ypos 1025
+ }
+ StickyNote {
+  inputs 0
+  name StickyNote1
+  tile_color 0xff
+  label "3x3 Hard"
+  note_font_size 40
+  xpos -2667
+  ypos -899
+ }
+ StickyNote {
+  inputs 0
+  name StickyNote4
+  tile_color 0xff
+  label "3x3 Soft"
+  note_font_size 40
+  xpos -2382
+  ypos -901
+ }
+ StickyNote {
+  inputs 0
+  name StickyNote9
+  tile_color 0xff
+  label "3x3 Nearest"
+  note_font_size 40
+  xpos -2109
+  ypos -901
+ }
+ StickyNote {
+  inputs 0
+  name StickyNote2
+  tile_color 0xff
+  label "6x6 Hard"
+  note_font_size 40
+  xpos -1743
+  ypos -903
+ }
+ StickyNote {
+  inputs 0
+  name StickyNote10
+  tile_color 0xff
+  label "6x6 Nearest"
+  note_font_size 40
+  xpos -1208
+  ypos -904
+ }
+ StickyNote {
+  inputs 0
+  name StickyNote3
+  tile_color 0xff
+  label "9x9 Hard"
+  note_font_size 40
+  xpos -778
+  ypos -901
+ }
+ StickyNote {
+  inputs 0
+  name StickyNote6
+  tile_color 0xff
+  label "9x9 Soft"
+  note_font_size 40
+  xpos -517
+  ypos -902
+ }
+ StickyNote {
+  inputs 0
+  name StickyNote11
+  tile_color 0xff
+  label "9x9 Nearest"
+  note_font_size 40
+  xpos -222
+  ypos -903
+ }
+end_group
