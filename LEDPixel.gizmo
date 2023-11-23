@@ -45,13 +45,13 @@ Gizmo {
   xpos 592
   ypos -1411
  }
-set Na8c20800 [stack 0]
+set Ned9e9400 [stack 0]
  Dot {
   name Dot5
   xpos 196
   ypos -1411
  }
-set Na8c20c00 [stack 0]
+set Nd6d0000 [stack 0]
  Dot {
   name Dot14
   xpos -60
@@ -67,7 +67,7 @@ set Na8c20c00 [stack 0]
   xpos -60
   ypos -1238
  }
-set Na8c21800 [stack 0]
+set Nd6d0c00 [stack 0]
  Dot {
   name Dot56
   xpos -279
@@ -85,7 +85,7 @@ set Na8c21800 [stack 0]
   xpos -279
   ypos -1064
  }
-push $Na8c21800
+push $Nd6d0c00
  Switch {
   inputs 2
   which {{sub}}
@@ -98,13 +98,13 @@ push $Na8c21800
   xpos -60
   ypos -965
  }
-set Na8c3b000 [stack 0]
+set Nbdc6400 [stack 0]
  Dot {
   name Dot46
   xpos -170
   ypos -965
  }
-set Na8c3b400 [stack 0]
+set Nbdc6800 [stack 0]
  Expression {
   expr0 "((y-frame*18)%12==0) + ((y-1-frame*18)%12==0) + ((y-2-frame*18)%12==0)"
   channel1 {-rgba.red -rgba.green -rgba.blue none}
@@ -126,7 +126,7 @@ set Na8c3b400 [stack 0]
   xpos -170
   ypos -663
  }
-push $Na8c3b000
+push $Nbdc6400
  Expression {
   expr0 "((x)%9==0) + ((x-1)%9==0) + ((x-2)%9==0)"
   expr1 "((x-3)%9==0) + ((x-4)%9==0) + ((x-5)%9==0)"
@@ -148,19 +148,19 @@ push $Na8c3b000
   xpos -60
   ypos -399
  }
-push $Na8c3b400
+push $Nbdc6800
  Dot {
   name Dot25
   xpos -386
   ypos -965
  }
-set Na8c67000 [stack 0]
+set Nbd2e400 [stack 0]
  Dot {
   name Dot26
   xpos -496
   ypos -965
  }
-set Na8c67400 [stack 0]
+set Nbd2e800 [stack 0]
  Expression {
   expr0 "((y-frame*18)%12==0) + ((y-1-frame*18)%12==0) + ((y-2-frame*18)%12==0)"
   channel1 {-rgba.red -rgba.green -rgba.blue none}
@@ -182,7 +182,7 @@ set Na8c67400 [stack 0]
   xpos -496
   ypos -663
  }
-push $Na8c67000
+push $Nbd2e400
  Expression {
   expr0 "((x)%12==0) + ((x-1)%12==0) + ((x-2)%12==0)"
   expr1 "((x-3)%12==0) + ((x-4)%12==0) + ((x-5)%12==0)"
@@ -205,20 +205,20 @@ push $Na8c67000
   xpos -420
   ypos -626
  }
- set Ca8c94c00 [stack 0]
-push $Na8c67400
+ set Cd6a4000 [stack 0]
+push $Nbd2e800
  Dot {
   name Dot6
   xpos -644
   ypos -965
  }
-set Na8c95000 [stack 0]
+set Nd6a4400 [stack 0]
  Dot {
   name Dot7
   xpos -754
   ypos -965
  }
-set Na8c95400 [stack 0]
+set Nd6a4800 [stack 0]
  Expression {
   expr0 "((y-frame*18)%12==0) + ((y-1-frame*18)%12==0) + ((y-2-frame*18)%12==0)"
   channel1 {-rgba.red -rgba.green -rgba.blue none}
@@ -240,7 +240,7 @@ set Na8c95400 [stack 0]
   xpos -754
   ypos -663
  }
-push $Na8c95000
+push $Nd6a4400
  Expression {
   expr0 "((x)%12==0) + ((x-1)%12==0) + ((x-2)%12==0)"
   expr1 "((x-3)%12==0) + ((x-4)%12==0) + ((x-5)%12==0)"
@@ -274,19 +274,19 @@ push $Na8c95000
   xpos -386
   ypos -234
  }
-push $Na8c95400
+push $Nd6a4800
  Dot {
   name Dot39
   xpos -1028
   ypos -965
  }
-set Na22e5800 [stack 0]
+set Neb232c00 [stack 0]
  Dot {
   name Dot43
   xpos -1167
   ypos -965
  }
-set Na22e5c00 [stack 0]
+set Neb233000 [stack 0]
  Expression {
   expr0 (y-frame*12)%8==0
   expr1 (y-1-frame*12)%8==0
@@ -306,7 +306,7 @@ set Na22e5c00 [stack 0]
   xpos -1167
   ypos -662
  }
-push $Na22e5800
+push $Neb232c00
  Expression {
   expr0 ((x)%6==0)+((x-1)%6==0)
   expr1 ((x-2)%6==0)+((x-3)%6==0)
@@ -328,19 +328,19 @@ push $Na22e5800
   xpos -1028
   ypos -409
  }
-push $Na22e5c00
+push $Neb233000
  Dot {
   name Dot22
   xpos -1336
   ypos -965
  }
-set Na230d800 [stack 0]
+set Neb25ac00 [stack 0]
  Dot {
   name Dot23
   xpos -1446
   ypos -965
  }
-set Na230dc00 [stack 0]
+set Neb25b000 [stack 0]
  Expression {
   expr0 (y-frame*12)%8==0
   expr1 (y-1-frame*12)%8==0
@@ -360,7 +360,7 @@ set Na230dc00 [stack 0]
   xpos -1446
   ypos -659
  }
-push $Na230d800
+push $Neb25ac00
  Expression {
   expr0 ((x)%8==0)+((x-1)%8==0)
   expr1 ((x-2)%8==0)+((x-3)%8==0)
@@ -377,24 +377,24 @@ push $Na230d800
   xpos -1370
   ypos -662
  }
-clone $Ca8c94c00 {
+clone $Cd6a4000 {
   xpos -1370
   ypos -622
   selected false
  }
-push $Na230dc00
+push $Neb25b000
  Dot {
   name Dot8
   xpos -1612
   ypos -965
  }
-set Na2341800 [stack 0]
+set Nbfd6c00 [stack 0]
  Dot {
   name Dot9
   xpos -1722
   ypos -965
  }
-set Na2341c00 [stack 0]
+set Nbfd7000 [stack 0]
  Expression {
   expr0 (y-frame*12)%8==0
   expr1 (y-1-frame*12)%8==0
@@ -414,7 +414,7 @@ set Na2341c00 [stack 0]
   xpos -1722
   ypos -659
  }
-push $Na2341800
+push $Nbfd6c00
  Expression {
   expr0 ((x)%8==0)+((x-1)%8==0)
   expr1 ((x-2)%8==0)+((x-3)%8==0)
@@ -443,19 +443,19 @@ push $Na2341800
   xpos -1370
   ypos -412
  }
-push $Na2341c00
+push $Nbfd7000
  Dot {
   name Dot38
   xpos -1920
   ypos -965
  }
-set Na2375c00 [stack 0]
+set Nbc1f000 [stack 0]
  Dot {
   name Dot40
   xpos -2072
   ypos -965
  }
-set Na23aa000 [stack 0]
+set Nbc1f400 [stack 0]
  Expression {
   channel0 rgb
   expr0 "(y-frame*6) % 4 == 0"
@@ -469,7 +469,7 @@ set Na23aa000 [stack 0]
   xpos -2072
   ypos -656
  }
-push $Na2375c00
+push $Nbc1f000
  Expression {
   expr0 "x % 3 == 0"
   expr1 "x % 3 == 1"
@@ -491,19 +491,19 @@ push $Na2375c00
   xpos -1920
   ypos -409
  }
-push $Na23aa000
+push $Nbc1f400
  Dot {
   name Dot19
   xpos -2248
   ypos -965
  }
-set Na23ab800 [stack 0]
+set Nbc4ac00 [stack 0]
  Dot {
   name Dot20
   xpos -2358
   ypos -965
  }
-set Na23abc00 [stack 0]
+set Nbc4b000 [stack 0]
  Expression {
   channel0 rgb
   expr0 "(y-frame*6) % 4 == 0"
@@ -517,7 +517,7 @@ set Na23abc00 [stack 0]
   xpos -2358
   ypos -656
  }
-push $Na23ab800
+push $Nbc4ac00
  Expression {
   expr0 "x % 4 == 0"
   expr1 "x % 4 == 1"
@@ -540,13 +540,13 @@ push $Na23ab800
   xpos -2282
   ypos -619
  }
-push $Na23abc00
+push $Nbc4b000
  Dot {
   name Dot10
   xpos -2528
   ypos -965
  }
-set Na23d7400 [stack 0]
+set Nbafc800 [stack 0]
  Dot {
   name Dot11
   xpos -2638
@@ -567,7 +567,7 @@ set Na23d7400 [stack 0]
   xpos -2638
   ypos -656
  }
-push $Na23d7400
+push $Nbafc800
  Expression {
   expr0 "x % 4 == 0"
   expr1 "x % 4 == 1"
@@ -608,30 +608,34 @@ push $Na23d7400
   xpos -1370
   ypos -237
  }
- FrameHold {
-  firstFrame 1
-  name FrameHold1
+ Retime {
+  output.last -2147483648
+  speed 0
+  filter none
+  shutter 0
+  time ""
+  name Retime1
   xpos -1370
-  ypos -113
+  ypos -99
   disable {{static}}
  }
  Clamp {
   name Clamp1
   xpos -1370
-  ypos -61
+  ypos 1
  }
  Multiply {
   value {{intensity}}
   name Multiply1
   xpos -1370
-  ypos -9
+  ypos 53
  }
  Dot {
   name Dot58
   xpos -1336
   ypos 149
  }
-set Na2440400 [stack 0]
+set Nbb37c00 [stack 0]
  Dot {
   name Dot60
   xpos -1480
@@ -649,7 +653,7 @@ set Na2440400 [stack 0]
   xpos -1480
   ypos 301
  }
-push $Na2440400
+push $Nbb37c00
  Switch {
   inputs 2
   which {{sub}}
@@ -662,20 +666,20 @@ push $Na2440400
   xpos -1336
   ypos 457
  }
-set Na2441c00 [stack 0]
+set Nd001400 [stack 0]
  Dot {
   name Dot15
   xpos -1336
   ypos 568
  }
-set Na2464000 [stack 0]
+set Nd001800 [stack 0]
  Dot {
   name Dot18
   xpos -1336
   ypos 680
  }
-push $Na2464000
-push $Na8c20c00
+push $Nd001800
+push $Nd6d0000
  Grade {
   white 2
   name Grade1
@@ -687,7 +691,7 @@ push $Na8c20c00
   xpos 196
   ypos 292
  }
-set Na2464c00 [stack 0]
+set Nd022400 [stack 0]
  Dot {
   name Dot13
   xpos 9
@@ -701,8 +705,8 @@ set Na2464c00 [stack 0]
   xpos -25
   ypos 565
  }
-push $Na2441c00
-push $Na2464c00
+push $Nd001400
+push $Nd022400
  Merge2 {
   inputs 2
   operation multiply
@@ -723,13 +727,13 @@ push $Na2464c00
   xpos 196
   ypos 907
  }
-set Na2490000 [stack 0]
+set Nd023800 [stack 0]
  Dot {
   name Dot34
   xpos -114
   ypos 907
  }
-set Na2490400 [stack 0]
+set Nd023c00 [stack 0]
  Dot {
   name Dot33
   xpos -669
@@ -740,13 +744,13 @@ set Na2490400 [stack 0]
   xpos -669
   ypos 1121
  }
-set Na2490c00 [stack 0]
+set Nd04c400 [stack 0]
  Dot {
   name Dot17
   xpos -559
   ypos 1121
  }
-set Na2491000 [stack 0]
+set Nd04c800 [stack 0]
  Blur {
   size {{parent.Blur7.size*2}}
   name Blur6
@@ -759,7 +763,7 @@ set Na2491000 [stack 0]
   xpos -593
   ypos 1255
  }
-push $Na2490c00
+push $Nd04c400
  Blur {
   size 1
   name Blur7
@@ -772,13 +776,13 @@ push $Na2490c00
   xpos -703
   ypos 1255
  }
-push $Na2491000
+push $Nd04c800
  Dot {
   name Dot28
   xpos -449
   ypos 1121
  }
-set Na24ea400 [stack 0]
+set Nd04dc00 [stack 0]
  Blur {
   size {{parent.Blur6.size*2}}
   name Blur8
@@ -792,13 +796,13 @@ set Na24ea400 [stack 0]
   ypos 1255
  }
 push 0
-push $Na24ea400
+push $Nd04dc00
  Dot {
   name Dot29
   xpos -339
   ypos 1121
  }
-set Na24eb000 [stack 0]
+set Neaea8800 [stack 0]
  Blur {
   size {{parent.Blur8.size*2}}
   name Blur9
@@ -811,7 +815,7 @@ set Na24eb000 [stack 0]
   xpos -373
   ypos 1255
  }
-push $Na24eb000
+push $Neaea8800
  Dot {
   name Dot30
   xpos -237
@@ -841,7 +845,7 @@ push $Na24eb000
   xpos -449
   ypos 1552
  }
-push $Na2490400
+push $Nd023c00
  Merge2 {
   inputs 2
   operation plus
@@ -855,7 +859,7 @@ push $Na2490400
   xpos -114
   ypos 1678
  }
-push $Na2490000
+push $Nd023800
  Switch {
   inputs 2
   which {{glow}}
@@ -875,7 +879,7 @@ push $Na2490000
   xpos 196
   ypos 2000
  }
-push $Na8c20800
+push $Ned9e9400
  Dissolve {
   inputs 2
   which {{main_mix}}
