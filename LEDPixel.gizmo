@@ -1,4 +1,4 @@
-Gizmo {
+Group {
  name LEDPixel
  tile_color 0xff
  addUserKnob {20 LED}
