@@ -2,4 +2,4 @@ LEDPixel procedurally generate pixel pattern for screen inserts integration. Cre
 
 ![alt text](https://klearrender.files.wordpress.com/2023/11/led_thumb.jpg)
 
-![alt text](https://klearrender.files.wordpress.com/2023/11/led_interface_v01.png)
+![alt text](https://klearrender.wordpress.com/wp-content/uploads/2024/07/led02.jpg)
