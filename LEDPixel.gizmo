@@ -1,5 +1,5 @@
 Group {
- tile_color 0xff
+ tile_color 0x444444ff
  name LEDPixel
  addUserKnob {20 LED}
  addUserKnob {4 size l "Pixel Size" t "LED Size." M {"3x3 " 6x6 9x9 "" "" "" "" ""}}
